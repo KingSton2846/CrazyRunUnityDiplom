@@ -25,8 +25,8 @@ public class TouchMovedController : MonoBehaviour
     private void Update()
     {
         RotationPlatform();
-        _transformPlatform.position = Vector3.zero;
-        BalancePlatform();
+        //_transformPlatform.position = Vector3.zero;
+        //BalancePlatform();
         if(_ball != null && _powerJump != 0)
         {
             JumpBall();
@@ -72,8 +72,12 @@ public class TouchMovedController : MonoBehaviour
     {
         if (_touchCheckInput.IsThereTouchOnScreen() == true)
         {
+            
             Vector2 tempDeltaPosition = _touchCheckInput.GetTouchDeltaPosition();
             _platformaRotation.AddTorque(tempDeltaPosition.y * _speedRotation, 0f, -tempDeltaPosition.x * _speedRotation);
+
+            Vector3 movement = new Vector3(tempDeltaPosition.x, 0f, tempDeltaPosition.y);
+            _ball.AddForce(movement * Time.deltaTime * _speedRotation);
         }
     }
 
