@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 2186248327278174173}
   - component: {fileID: 3071220164645669956}
   - component: {fileID: 1883441028858019021}
+  - component: {fileID: 2010274591722933887}
   m_Layer: 0
   m_Name: Ball
   m_TagString: Player
@@ -64,7 +65,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 729f8dd53010ca14ba5aad82f9577384, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -146,3 +147,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c02b22994484d94a8c1303d194cfc5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2010274591722933887
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4241445375691401704}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2644117aa73ef5a418cdc63af4482ca0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _joystick: {fileID: 0}
+  _ball: {fileID: 3071220164645669956}
+  _powerJump: 0.005
+  _speed: 0.5
