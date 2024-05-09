@@ -125,7 +125,6 @@ public class GameController : MonoBehaviour
     {
         int coutScene = SceneManager.GetActiveScene().buildIndex;
         int levelProgress = PlayerPrefs.GetInt("LevelProgress");
-        Debug.Log(coutScene + " " + levelProgress);
         if( levelProgress == coutScene ) 
         {
             levelProgress++;
