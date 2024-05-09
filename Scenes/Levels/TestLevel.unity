@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 414239076}
   - component: {fileID: 414239075}
   m_Layer: 0
-  m_Name: Terrain_0_0_a8125cc2-070c-48aa-a18e-dc2332343990
+  m_Name: TerrainFirstLevel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1206,6 +1206,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Menu
       objectReference: {fileID: 0}
+    - target: {fileID: 4486075029202385365, guid: c3ab436221a2c2c42bcf4230f05dc9ef, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6230766486464069427, guid: c3ab436221a2c2c42bcf4230f05dc9ef, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -1218,6 +1222,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 963194231}
+    - target: {fileID: 8484478231273242491, guid: c3ab436221a2c2c42bcf4230f05dc9ef, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 106.999985
+      objectReference: {fileID: 0}
     - target: {fileID: 9127765429801180509, guid: c3ab436221a2c2c42bcf4230f05dc9ef, type: 3}
       propertyPath: m_Camera
       value: 
