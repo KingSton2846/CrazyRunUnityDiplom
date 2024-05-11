@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class ZoneWind : MonoBehaviour
 {
-    [SerializeField] private float pushForce = 10f; // Сила толчка
+    [SerializeField] private float _pushForce = 10f; // Сила толчка
     [SerializeField] private float _timer = 3f;
+    [SerializeField] private GameObject _windPartical;
     private BoxCollider _boxcollider;
 
     void Start()
@@ -21,7 +22,7 @@ public class ZoneWind : MonoBehaviour
         if (rb != null)
         {
             // Применяем силу толчка к объекту вперед
-            rb.AddForce(transform.forward * pushForce, ForceMode.Force);
+            rb.AddForce(transform.forward * _pushForce, ForceMode.Force);
         }
     }
 
@@ -29,10 +30,12 @@ public class ZoneWind : MonoBehaviour
     {
         while (true)
         {
+            _windPartical.SetActive(false);
             _boxcollider.enabled = false;
 
             yield return new WaitForSeconds(timer);
 
+            _windPartical.SetActive(true);
             _boxcollider.enabled = true;
 
             yield return new WaitForSeconds(timer);

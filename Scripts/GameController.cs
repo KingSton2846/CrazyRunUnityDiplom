@@ -118,9 +118,6 @@ public class GameController : MonoBehaviour
             _isDeath = false;
         }
     }
-
-    //Сохранение прогресса (пока что не работает, решил сконцентрироваться пока что на других задачах. Когда пойму как правильно использовать раскоментирую)
-    
     public void SavingProgress()
     {
         int coutScene = SceneManager.GetActiveScene().buildIndex;
