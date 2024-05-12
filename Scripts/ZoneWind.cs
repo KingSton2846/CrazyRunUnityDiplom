@@ -6,7 +6,7 @@ public class ZoneWind : MonoBehaviour
 {
     [SerializeField] private float _pushForce = 10f; // Сила толчка
     [SerializeField] private float _timer = 3f;
-    [SerializeField] private GameObject _windPartical;
+    [SerializeField] private ParticleSystem _windPartical;
     private BoxCollider _boxcollider;
 
     void Start()
@@ -30,12 +30,12 @@ public class ZoneWind : MonoBehaviour
     {
         while (true)
         {
-            _windPartical.SetActive(false);
+            _windPartical.Stop();
             _boxcollider.enabled = false;
 
             yield return new WaitForSeconds(timer);
 
-            _windPartical.SetActive(true);
+            _windPartical.Play();
             _boxcollider.enabled = true;
 
             yield return new WaitForSeconds(timer);
