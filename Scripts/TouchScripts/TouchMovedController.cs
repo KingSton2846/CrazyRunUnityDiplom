@@ -7,10 +7,12 @@ using UnityEngine.UIElements;
 
 public class TouchMovedController : MonoBehaviour
 {
-    [SerializeField] Joystick _joystick;
+    [SerializeField] private Joystick _joystick;
+    [SerializeField] private Transform _camera;
     [SerializeField] private Rigidbody _ball;
     [SerializeField] private float _powerJump;
     [SerializeField] private float _speed;
+    [SerializeField] private float _smooth;
 
     private void Start()
     {
@@ -32,9 +34,23 @@ public class TouchMovedController : MonoBehaviour
         float directionX = _joystick.Horizontal;
         float directionY = _joystick.Vertical;
 
-        Vector3 movement = new Vector3(directionX, 0f, directionY);
+        Vector3 forward = _camera.forward;
+        Vector3 right = _camera.right;
+
+        forward.y = 0f;
+        right.y = 0f;
+        forward.Normalize();
+        right.Normalize();
+        
+        Vector3 movement = forward * directionY + right * directionX;
 
         _ball.AddForce(movement * Time.deltaTime * _speed);
+        if(Input.touchCount > 0 )
+        {
+            Vector3 direction = this.transform.rotation.eulerAngles;
+            direction.y += directionX * 45f;
+            this.transform.rotation = Quaternion.Slerp(this.transform.rotation, Quaternion.Euler(direction), _smooth);
+        }
     }
 
     //Прыжок мяча по двойному нажатию по экрану
