@@ -48,7 +48,7 @@ public class TouchMovedController : MonoBehaviour
         if(Input.touchCount > 0 )
         {
             Vector3 direction = this.transform.rotation.eulerAngles;
-            direction.y += directionX * 45f;
+            direction.y += directionX * 75f;
             this.transform.rotation = Quaternion.Slerp(this.transform.rotation, Quaternion.Euler(direction), _smooth);
         }
     }
